@@ -47,20 +47,6 @@ To load our production/development CSS and JavaScript files, you can use the han
 
    Since the Desktop/Mobile versions of the boilerplate point Require.js to two different files, including Require.js asynchronously with the `loadJS` method provides the flexibility to do that.
 
-### Mobile Detection Script
-
-There is a simple JavaScript mobile browser detection script that stores different production/development CSS and JavaScript files within a local `config` object based on whether a user is using a mobile or desktop browser.
-
-> You do not need to use the provided JavaScript mobile detection script for your application. We provided it for convenience so that you could see an example of how to separate your Mobile and Desktop JavaScript logic using Require.js.
-
-### Production Mode
-
-In production mode, your app's single minified and concatenated JavaScript file is loaded using Almond.js instead of Require.js.  Your application's minfied common CSS file is also included.
-
-### Development Mode
-
-In development mode, your app's non-minified JavaScript files are loaded using Require.js instead of Almond.js.  Your application's non-minified common CSS file is also included.
-
 Config.js
 ---------
 
@@ -143,10 +129,6 @@ There is currently only one route listed (which gets called if there is no hash 
 > You must keep the `Backbone.history.start()` method call, since this is what triggers Backbone to start reacting to hashchange events.
 
 When your default route is invoked, a new View instance is created, which calls the render method immediately to append the header template to the page.
-
-DesktopRouter.js
-----------------
-DesktopRouter.js has the exact same code as **MobileRouter.js**.  The difference is this is where you can include desktop specific scripts that you do not want included in your mobile web application.
 
 View.js
 -----------
@@ -253,20 +235,6 @@ The entire file is wrapped in an AMD define method, with all external module (fi
 
    - The boilerplate uses the **grunt-contrib-requirejs** plugin to run the Require.js optimizer and the **grunt-contrib-jshint** plugin to automate JSHint code quality checking.  Both plugins are maintained by the core Grunt team.
 
-**What Grunt tasks can I use?**
-
-   - The boilerplate provides `test`, `build`, and `default` tasks.
-
-   - The `test` task will only JSHint your code for quality.  You can run the `test` task by typing `grunt test`.
-
-   - The `build` task will concatenate and minify your Desktop/Mobile JavaScript and CSS files using the Require.js optimizer.  You can run the `build` task by typing `grunt build`.
-
-   - The `default` task will run both the `test` and `build` tasks.  You can run the `default` task by typing `grunt`.
-
-**Why are you using the @import tag to include CSS files within desktop.css and mobile.css?**
-
-   - When creating production builds, Require.js inlines all of the CSS files included via `@import` tags.  This means that we can easily include all of our CSS files within one file and not have any performance concerns when our app get's released to the production.  In development mode, we aren't as concerned with performance.
-
 **Do I have to manage different Require.js configuration settings for the Grunt build, Jasmine tests, and Mobile/Desktop applications?**
 
    - No!  All of the Require.js configurations are in one place (config.js) and are reused in the different portions of our app that require it.
@@ -279,157 +247,7 @@ The entire file is wrapped in an AMD define method, with all external module (fi
 
    -Yep, because the Require.js text plugin dynamically pulls in template files via ajax (which is not allowed with the `File://` local extension.  Luckily for you I have provided an easy to use Node.js web server for convenience.
 
-**Why did you not include a package manager such as Bower, Volo, or Jam?**
-
-   -I ultimately decided against including a package manager. I agree that using a package manager for this boilerplate is the ultimate solution, but the JS package management space is in a state of flux. A browser package management solution has not been adopted by the community yet. Obviously, this may change.
-
-**Can I contribute to this project?**
-
-   -Please do!  I am learning just like you.  If you want to contribute, please send pull requests to the dev branch.
-
-##Change Log
-
-`1.6.0` - May 22, 2013
-
-- Changed Require configuration in both `config.js` and `Gruntfile.js` to use `baseUrl: 'js/app'` instead of `baseUrl: 'js'`.  
-- This eliminates the need to create shortcuts to folders in `app` directory, and aligns BRB more properly with [MRB](https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate).
-
-`1.5.0` - April 17, 2013
-
-- All Require.js configurations are now stored in one place (config.js) instead of three.  This removes the pain of managing different desktop, mobile, and jasmine configurations.  You can see the improved logic inside of `index.html`, `specRunner.html`, and the Grunt build.
-- The Jasmine Test Runner logic was simplified by removing `testInit.js` and all `shim` configuration settings for Jasmine.  The Jasmine library is now being included directly before Require.js, which guarantees that it will be on the page before any specs are run.
-
-`1.4.0` - April 6, 2013
-
-**A huge thank you to [Nick Pack](https://github.com/nickpack) for helping to implement Grunt in this release**
-
-- Added Grunt.js support run the Require.js optimization build.
-- Updated the `loadJS()` and `loadCSS()` methods and removed the HTML5 **DOMContentLoaded** event
-- Updated all libraries to the latest versions.
-
-`1.3.0` - December 31, 2012
-
-- Updated the `loadCSS()` method to now support an array of arguments
-
-- Removed the `loadRequireJS()` method
-
-- Added the `loadJS()` method (supports an array of arguments)
-
-- Added a new **production** local variable inside of _index.html_ to easily turn on and off production/development mode
-
-- _Production_ mode no longer includes Require.js (This was accidentally being included along with Almond.js) [#14](https://github.com/gfranko/Backbone-Require-Boilerplate/issues/14)
-
-- The common CSS file is now being included after all libraries/application files have been loaded.  This allows you to easily override 3rd party CSS rules (Bootstrap, jQuery Mobile, etc) [#14](https://github.com/gfranko/Backbone-Require-Boilerplate/issues/14)
-
-`1.2.0` - December 1, 2012
-
-Special thanks to [Mark Simon](https://github.com/msimonc) - This release would not have happened without him
-
-- Added jQuery Mobile support
-
-- Added jQueryUI support
-
-- Upgraded all libs to their latest versions
-
-- Included a Node.js server for convenience in testing BRB
-
-- Removed the add/remove users example and reverted this project back to just a boilerplate
-
-- Added Desktop and Mobile Router Jasmine tests
-
-- Added the Require.js text plugin back in (since I now figured out how to use it with Jasmine)
-
-`1.1.0` - October 19, 2012
-
-- Upgraded to Require.js 2.1.1
-
-- Upgraded to r.js 2.1.1
-
-- Upgraded to almond.js 0.2.0
-
-- Upgraded to Lodash 0.8.2
-
-- Upgraded to jQuery 1.8.2
-
-`1.0.0` - September 19, 2012
-
-- Added Almond.js to the production build process.
-
-Thanks to [James Burke](https://github.com/jrburke) for helping with the updated build script!
-
-`0.9.0` - September 2, 2012
-
-- Complete rewrite of the Boilerplate example.  The example now illustrates how to make a simple add/remove user table with Backbone Collections, Models, and Views.
-
-- Upgraded to Lodash 0.6.1
-
-- Upgraded to jQuery 1.8.1
-
-- Added [Backbone.validateAll](https://github.com/gfranko/Backbone.validateAll)
-
-`0.8.0` - August 22, 2012
-
-- Added Project Nickname: **BRB** - Seriously how did I not see that before.
-
-- Added Jasmine Unit Tests!  Two unit tests were added for both Views and Models.
-
-- **BREAKING CHANGE**: The Require.js text plugin was removed, and an inline html template was used instead.
-
-- Upgraded to Lodash 0.5.2
-
-
-`0.7.0` - August 10, 2012
-
-- Upgraded to Require.js 2.0.5 and r.js 2.0.5 [documentation](http://tagneto.blogspot.com/2012/08/requirejs-205-released.html)
-
-- Upgraded to Lodash 0.4.2
-
-- Upgraded to jQuery 1.8.0 [documentation](http://blog.jquery.com/2012/08/09/jquery-1-8-released/)
-
-`0.6.0` - June 13, 2012
-
-- Upgraded to Require.js 2.0.2 and r.js 2.0.2 [documentation](http://tagneto.blogspot.ca/2012/06/requirejs-202-released.html)
-
-- Upgraded to Lodash 0.3.1
-
-`0.5.0` - June 5, 2012
-
-- All modules now return a class instead of an instance
-- The self variable has been removed from all modules (scoping issue)
-- The Require.js Optimizer build file (app.build.js) has been simplified by adding a `mainConfigFile` option that points to the desktop main file.  Keep in mind that all of your mobile and desktop shims and paths need to be in desktopInit.js
-
-`0.4.0` - June 1, 2012
-
-- Upgraded to Require.js 2.0.1 and r.js 2.0.1
-- Added anotherView.js to demonstrate how to extend Backbone.js Views/Classes
-- Upgraded `model.js` to now return a Model instance instead of a Model Class
-- Updated documentation
-
-`0.3.0` - June 1, 2012
-
-- Upgraded to Lodash 0.2.2
-- Removed the Lodash Shim configuration (not needed because Lodash is AMD compatible)
-- Updated documentation
-
-`0.2.0` - May 29, 2012
-
-- Upgraded to Require.js 2.0, text.js 2.0, and r.js 2.0.
-- Removed Use.js because Require.js 2.0 now includes this functionality (using the Shim configuration)
-- Replaced all the minified JavaScript files with unminified/documented JavaScript files (you can minify these files using the Require.js Optimizer script provided)
-
-`0.1.0` - May 24, 2012
-
-- Initial Backbone-Require-Boilerplate release.  Added source code and documentation.
-
-##Contributors
-* [Greg Franko](https://github.com/gfranko) 
-* [Nick Pack](https://github.com/nickpack)
-* [Brett Jones](https://github.com/brettjonesdev)
 
 ## License
-Copyright (c) 2012 Greg Franko  
+Based on backbone example contributed by Greg Franko  
 Licensed under the MIT license.		
-		  
-
-	
-
