@@ -1,6 +1,6 @@
 // View.js
 // -------
-define(["jquery", "backbone", "app/Model", "text!app/templates/heading.html"],
+define(["jquery", "backbone", "Model", "text!templates/heading.html"],
 
     function($, Backbone, Model, template){
 
@@ -15,7 +15,6 @@ define(["jquery", "backbone", "app/Model", "text!app/templates/heading.html"],
                 this.render();
 
             },
-
             // View Event Handlers
             events: {
 

@@ -1,6 +1,6 @@
 // MobileRouter.js
 // ---------------
-define(["jquery", "backbone", "app/Model", "app/views/View", "app/Collections"],
+define(["jquery", "backbone", "Model", "views/View", "Collections"],
         
     function($, Backbone, UserModel, View, Collection) {
 
