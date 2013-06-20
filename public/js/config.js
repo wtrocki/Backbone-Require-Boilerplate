@@ -12,19 +12,17 @@ require.config({
 	paths : {
 		// Core Libraries
 		// --------------
-		"jquery" : "../libs/jquery",
+		"jquery" : "../libs/jquery-2.0.0",
 
-		"jquerymobile" : "../libs/jquery.mobile",
+		"jquerymobile" : "../libs/jquery.mobile-1.3.1",
 
 		"underscore" : "../libs/lodash",
 
-		"backbone" : "../libs/backbone",
+		"backbone" : "../libs/backbone-1.0.0",
 
 		// Plugins
 		// -------
 		"backbone.validateAll" : "../libs/plugins/Backbone.validateAll",
-
-		"bootstrap" : "../libs/plugins/bootstrap",
 
 		"text" : "../libs/plugins/text"
 	},
@@ -34,9 +32,6 @@ require.config({
 	shim : {
 		// jQuery Mobile
 		"jquerymobile" : [ "jquery" ],
-
-		// Twitter Bootstrap jQuery plugins
-		"bootstrap" : [ "jquery" ],
 
 		// Backbone
 		"backbone" : {
