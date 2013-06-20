@@ -16,14 +16,14 @@ module.exports = function(grunt) {
           optimizeCss: "standard",
           mainConfigFile: "public/js/config.js",
           include: ["mobile"],
-          out: "public/js/production.js"
+          out: "./deploy/production.js"
         }
       },
       mobileCSS: {
         options: {
           optimizeCss: "standard",
           cssIn: "./public/css/mobile.css",
-          out: "./public/css/production.css"
+          out: "./deploy/production.css"
         }
       }
     },
