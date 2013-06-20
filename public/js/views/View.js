@@ -22,7 +22,6 @@ define(["jquery", "backbone", "Model", "text!templates/heading.html"],
 
             // Renders the view's template to the UI
             render: function() {
-
                 // Setting the view's template property using the Underscore template method
                 this.template = _.template(template, {});
 
@@ -31,14 +30,10 @@ define(["jquery", "backbone", "Model", "text!templates/heading.html"],
 
                 // Maintains chainability
                 return this;
-
             }
-
         });
 
         // Returns the View class
         return View;
-
     }
-
 );

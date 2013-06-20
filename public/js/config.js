@@ -32,7 +32,6 @@ require.config({
 	// Sets the configuration for your third party scripts that are not AMD
 	// compatible
 	shim : {
-
 		// jQuery Mobile
 		"jquerymobile" : [ "jquery" ],
 

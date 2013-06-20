@@ -1,19 +1,20 @@
 <!doctype html>
 <html>
 <head>
-  <title>Jasmine Spec Runner</title>
-  <link rel="stylesheet" type="text/css" href="css/jasmine.css">
-  <script src="./libs/jasmine.js"></script>
-  <script src="./libs/jasmine-html.js"></script>
-  <script src="../public/js/libs/require.js" data-main="../public/js/app/config"></script>
+<title>Jasmine Spec Runner</title>
+<link rel="stylesheet" type="text/css" href="css/jasmine.css">
+<script src="./libs/jasmine.js"></script>
+<script src="./libs/jasmine-html.js"></script>
+<script src="./libs/jasmine-jquery.js"></script>
+<script src="../public/js/libs/require.js" data-main="config"></script>
 </head>
 <body>
-    <script>
-      // Add your Jasmine spec files here
-      require(["../../../tests/specs/spec"], function(spec) {
-        jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
-        jasmine.getEnv().execute();
-      });
-    </script>
+ <script>
+		// Add your Jasmine spec files here
+		require([ "../tests/specs/spec" ], function(spec) {
+			jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+			jasmine.getEnv().execute();
+		});
+	</script>
 </body>
 </html>
