@@ -2,7 +2,7 @@
 // -------------
 
 // Include Mobile Specific JavaScript files here (or inside of your Mobile router)
-require(["jquery", "backbone", "routers/MobileRouter", "jquerymobile", "backbone.validateAll"],
+require(["jquery", "backbone", "app/MobileRouter", "jquerymobile", "backbone.validateAll"],
 
   function($, Backbone, MobileRouter) {
 
@@ -14,7 +14,5 @@ require(["jquery", "backbone", "routers/MobileRouter", "jquerymobile", "backbone
 
     // Instantiates a new Mobile Router instance
     new MobileRouter();
-
   }
-
 );

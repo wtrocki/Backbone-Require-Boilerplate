@@ -1,4 +1,5 @@
 {
+
   "name": "Backbone-Require-Boilerplate",
   "title": "Backbone and Require Boilerplate",
   "description": "A Backbone.js and Require.js Boilerplate that promotes decoupling your JavaScript into modules, separating business logic from application logic using Models and Views, reusing your JavaScript between Desktop and Mobile Web versions, including non-AMD Compatible Third Party Scripts in your project, and optimizing all of your JavaScript (minify, concatenate, etc).",

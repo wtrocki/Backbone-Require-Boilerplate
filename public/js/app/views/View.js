@@ -1,11 +1,10 @@
 // View.js
 // -------
-define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
+define(["jquery", "backbone", "app/Model", "text!app/templates/heading.html"],
 
     function($, Backbone, Model, template){
 
         var View = Backbone.View.extend({
-
             // The DOM Element associated with this view
             el: ".example",
 

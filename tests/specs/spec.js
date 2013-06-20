@@ -1,6 +1,6 @@
 // Jasmine Unit Testing Suite
 // --------------------------
-define(["jquery", "backbone", "text!templates/heading.html", "views/View","models/Model", "collections/Collection", "routers/DesktopRouter", "routers/MobileRouter", "jasminejquery"],
+define(["jquery", "backbone", "text!app/templates/heading.html", "app/views/View","app/Model", "app/Collection",  "app/MobileRouter", "jasminejquery"],
 
     function($, Backbone, headerText, View, Model, Collection, DesktopRouter, MobileRouter) {
 
@@ -19,17 +19,13 @@ define(["jquery", "backbone", "text!templates/heading.html", "views/View","model
                 });
 
                 it("should contain the correct view element", function() {
-
                     this.router = new DesktopRouter();
-
                     expect(this.view.$el.selector).toEqual(".example");
 
                 });
 
                 it("should contain the appropriate template", function() {
-
                     expect(this.view.template).toEqual(headerText);
-
                 });
 
             }); // End of the View test suite

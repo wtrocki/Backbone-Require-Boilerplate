@@ -67,5 +67,4 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('build', ['requirejs:desktopJS', 'requirejs:mobileJS', 'requirejs:desktopCSS', 'requirejs:mobileCSS']);
   grunt.registerTask('default', ['test', 'build']);
-
 };
