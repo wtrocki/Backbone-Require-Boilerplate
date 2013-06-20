@@ -12,27 +12,26 @@ require.config({
 	paths : {
 		// Core Libraries
 		// --------------
-		"jquery" : "./libs/jquery",
+		"jquery" : "../libs/jquery",
 
-		"jquerymobile" : "./libs/jquery.mobile",
+		"jquerymobile" : "../libs/jquery.mobile",
 
-		"underscore" : "./libs/lodash",
+		"underscore" : "../libs/lodash",
 
-		"backbone" : "./libs/backbone",
+		"backbone" : "../libs/backbone",
 
 		// Plugins
 		// -------
-		"backbone.validateAll" : "./libs/plugins/Backbone.validateAll",
+		"backbone.validateAll" : "../libs/plugins/Backbone.validateAll",
 
-		"bootstrap" : "./libs/plugins/bootstrap",
+		"bootstrap" : "../libs/plugins/bootstrap",
 
-		"text" : "./libs/plugins/text",
+		"text" : "../libs/plugins/text",
 	},
 
 	// Sets the configuration for your third party scripts that are not AMD
 	// compatible
 	shim : {
-
 		// jQuery Mobile
 		"jquerymobile" : [ "jquery" ],
 
@@ -54,6 +53,6 @@ require.config({
 	}
 });
 
-// Launch first script
+//Launch first script
 require([ "MobileInit" ], function() {
 });

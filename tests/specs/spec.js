@@ -16,7 +16,6 @@ function($, Backbone, headerText, View, Model, Collection, MobileRouter) {
 
 				// Instantiates a new View instance
 				this.view = new View();
-
 			});
 
 			it("should contain the appropriate template", function() {
@@ -33,7 +32,6 @@ function($, Backbone, headerText, View, Model, Collection, MobileRouter) {
 
 				// Instantiates a new Model instance
 				this.model = new Model();
-
 				// We are spying on the _validate method to see if it gets called
 				spyOn(Model.prototype, "validate").andCallThrough();
 

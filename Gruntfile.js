@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         options: {
           baseUrl: "public/js",
           paths: {
-            "mobile": "init/MobileInit"
+            "mobile": "MobileInit"
           },
           wrap: true,
           name: "../libs/almond",
@@ -16,16 +16,16 @@ module.exports = function(grunt) {
           optimizeCss: "standard",
           mainConfigFile: "public/js/config.js",
           include: ["mobile"],
-          out: "public/js/MobileInit.min.js"
+          out: "public/js/production.js"
         }
       },
       mobileCSS: {
         options: {
           optimizeCss: "standard",
           cssIn: "./public/css/mobile.css",
-          out: "./public/css/mobile.min.css"
+          out: "./public/css/production.css"
         }
-      },
+      }
     },
     jshint: {
       files: ['Gruntfile.js', 'public/js/**/*.js', '!public/js/**/*min.js'],
@@ -34,7 +34,8 @@ module.exports = function(grunt) {
           jQuery: true,
           console: false,
           module: true,
-          document: true
+          document: true,
+          sloppy:false
         }
       }
     }

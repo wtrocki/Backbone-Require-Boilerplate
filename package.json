@@ -23,7 +23,6 @@
       "url": "https://github.com/gfranko/Backbone-Require-Boilerplate/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "./server/server",
   "keywords": [
     "Backbone.js",
     "Require.js",
