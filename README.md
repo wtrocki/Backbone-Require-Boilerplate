@@ -1,5 +1,8 @@
 Backbone-Require-Boilerplate (BRB)
 ==================================
+
+This repo is outdated! Please use official yeoman template
+
 > A Backbone.js and Require.js Boilerplate that promotes decoupling your JavaScript into modules, separating business logic from application logic using Collections/Models and Views, reusing your JavaScript between Desktop and Mobile Web versions while using a mobile framework (jQuery Mobile), including non-AMD Compatible Third Party Scripts in your project, optimizing all of your JavaScript (minify, concatenate, etc), and unit testing your JavaScript.
 
 ![Backbone Logo](http://3.bp.blogspot.com/-JFOJ-k6tLnA/TsiKgBYPvqI/AAAAAAAAAT8/dGXeu0LeuTE/s320/backbone-js-logo.png) ![RequireJS Logo](http://requirejs.org/i/logo.png)
